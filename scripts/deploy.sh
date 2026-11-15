@@ -108,7 +108,7 @@ for role in roles/datastore.user roles/aiplatform.user roles/secretmanager.secre
 done
 
 log "Deploying Cloud Run service $SERVICE from source"
-ENV_VARS="NODE_ENV=production,STORE=firestore,GOOGLE_GENAI_USE_VERTEXAI=true,GOOGLE_CLOUD_LOCATION=${REGION},GOOGLE_CLOUD_PROJECT=${PROJECT_ID}"
+ENV_VARS="NODE_ENV=production,STORE=firestore,GOOGLE_GENAI_USE_VERTEXAI=true,GOOGLE_CLOUD_LOCATION=global,GOOGLE_CLOUD_PROJECT=${PROJECT_ID}"
 SECRET_VARS="SESSION_SECRET=${SESSION_SECRET_NAME}:latest,JOB_TOKEN=${JOB_TOKEN_SECRET_NAME}:latest"
 if [ "$SMTP_ENABLED" = true ]; then
   ENV_VARS+=",SMTP_HOST=${SMTP_HOST},SMTP_USER=${SMTP_USER}"

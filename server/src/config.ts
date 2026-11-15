@@ -23,9 +23,9 @@ const EnvSchema = z.object({
 
   USE_MOCK_AI: bool,
   GEMINI_API_KEY: z.string().optional(),
-  GEMINI_MODEL: z.string().default("gemini-2.5-flash"),
+  GEMINI_MODEL: z.string().default("gemini-3-flash-preview"),
   GOOGLE_GENAI_USE_VERTEXAI: bool,
-  GOOGLE_CLOUD_LOCATION: z.string().default("asia-south1"),
+  GOOGLE_CLOUD_LOCATION: z.string().default("global"),
   AI_HOURLY_LIMIT: z.coerce.number().int().min(1).default(20),
 
   SMTP_HOST: z.string().optional(),
