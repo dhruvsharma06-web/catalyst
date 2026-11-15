@@ -12,8 +12,8 @@ const EnvSchema = z.object({
   APP_URL: z.url().default("http://localhost:5173"),
   LOG_LEVEL: z.enum(["fatal", "error", "warn", "info", "debug", "trace", "silent"]).default("info"),
 
-  SESSION_SECRET: z.string().min(32).optional(),
-  JOB_TOKEN: z.string().min(24).optional(),
+  SESSION_SECRET: z.string().trim().min(32).optional(),
+  JOB_TOKEN: z.string().trim().min(24).optional(),
 
   STORE: z.enum(["memory", "firestore"]).default("memory"),
   GOOGLE_CLOUD_PROJECT: z.string().optional(),
