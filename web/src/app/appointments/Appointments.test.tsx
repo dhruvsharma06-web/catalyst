@@ -38,7 +38,7 @@ describe("Appointments", () => {
   it("lists appointments with calendar links", async () => {
     renderApp(<Appointments />);
     expect(await screen.findByRole("heading", { level: 2, name: "Dr. Rao" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /calendar \(download file\)/i })).toHaveAttribute("href", "/api/v1/appointments/apt_1/ics");
+    expect(screen.getByRole("link", { name: /^Add to calendar/i })).toHaveAttribute("href", "/api/v1/appointments/apt_1/ics");
     const google = screen.getByRole("link", { name: /Google Calendar/ });
     expect(google.getAttribute("href")).toContain("https://calendar.google.com/calendar/render?action=TEMPLATE");
     expect(google).toHaveAttribute("rel", "noopener noreferrer");
