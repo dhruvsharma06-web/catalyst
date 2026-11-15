@@ -1,0 +1,17 @@
+# Dependencies and build output are recreated inside the image.
+node_modules
+**/node_modules
+dist
+**/dist
+**/*.tsbuildinfo
+
+# Version control, secrets, logs, reports and CI configuration.
+.git
+.github
+.env*
+!.env.example
+coverage
+docs/source
+*.log
+test-results
+playwright-report

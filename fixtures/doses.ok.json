@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-15",
+  "doses": [
+    {
+      "id": "med_metformin_2026-11-15_0800",
+      "medicationId": "med_metformin",
+      "name": "Metformin",
+      "dosage": "500 mg",
+      "color": "white",
+      "shape": "oval",
+      "time": "08:00",
+      "scheduledAt": "2026-11-15T02:30:00Z",
+      "status": "missed",
+      "loggedAt": null,
+      "loggedBy": null
+    },
+    {
+      "id": "med_amlodipine_2026-11-15_0900",
+      "medicationId": "med_amlodipine",
+      "name": "Amlodipine",
+      "dosage": "5 mg",
+      "color": "white",
+      "shape": "round",
+      "time": "09:00",
+      "scheduledAt": "2026-11-15T03:30:00Z",
+      "status": "taken",
+      "loggedAt": "2026-11-15T03:36:00Z",
+      "loggedBy": "Ananya Iyer"
+    },
+    {
+      "id": "med_vitamin_d3_2026-11-15_0900",
+      "medicationId": "med_vitamin_d3",
+      "name": "Vitamin D3",
+      "dosage": "60000 IU",
+      "color": "yellow",
+      "shape": "capsule",
+      "time": "09:00",
+      "scheduledAt": "2026-11-15T03:30:00Z",
+      "status": "due",
+      "loggedAt": null,
+      "loggedBy": null
+    },
+    {
+      "id": "med_metformin_2026-11-15_2000",
+      "medicationId": "med_metformin",
+      "name": "Metformin",
+      "dosage": "500 mg",
+      "color": "white",
+      "shape": "oval",
+      "time": "20:00",
+      "scheduledAt": "2026-11-15T14:30:00Z",
+      "status": "upcoming",
+      "loggedAt": null,
+      "loggedBy": null
+    },
+    {
+      "id": "med_atorvastatin_2026-11-15_2100",
+      "medicationId": "med_atorvastatin",
+      "name": "Atorvastatin",
+      "dosage": "10 mg",
+      "color": "pink",
+      "shape": "oval",
+      "time": "21:00",
+      "scheduledAt": "2026-11-15T15:30:00Z",
+      "status": "upcoming",
+      "loggedAt": null,
+      "loggedBy": null
+    }
+  ]
+}

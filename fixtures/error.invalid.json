@@ -1,0 +1,12 @@
+{
+  "error": {
+    "code": "INVALID_INPUT",
+    "message": "Some details need attention.",
+    "details": [
+      {
+        "field": "name",
+        "reason": "Required"
+      }
+    ]
+  }
+}

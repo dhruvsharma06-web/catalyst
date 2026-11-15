@@ -1,0 +1,72 @@
+{
+  "medications": [
+    {
+      "id": "med_amlodipine",
+      "name": "Amlodipine",
+      "dosage": "5 mg",
+      "instructions": "Take one tablet every morning.",
+      "times": ["09:00"],
+      "daysOfWeek": [0, 1, 2, 3, 4, 5, 6],
+      "startDate": "2026-11-01",
+      "endDate": null,
+      "stock": 9,
+      "refillAt": 10,
+      "color": "white",
+      "shape": "round",
+      "active": true,
+      "createdBy": "Kamala Iyer",
+      "updatedAt": "2026-11-14T06:40:00Z"
+    },
+    {
+      "id": "med_atorvastatin",
+      "name": "Atorvastatin",
+      "dosage": "10 mg",
+      "instructions": "Take one tablet at bedtime.",
+      "times": ["21:00"],
+      "daysOfWeek": [0, 1, 2, 3, 4, 5, 6],
+      "startDate": "2026-11-01",
+      "endDate": null,
+      "stock": 28,
+      "refillAt": 14,
+      "color": "pink",
+      "shape": "oval",
+      "active": true,
+      "createdBy": "Ananya Iyer",
+      "updatedAt": "2026-11-06T04:20:00Z"
+    },
+    {
+      "id": "med_metformin",
+      "name": "Metformin",
+      "dosage": "500 mg",
+      "instructions": "Take with breakfast and dinner.",
+      "times": ["08:00", "20:00"],
+      "daysOfWeek": [0, 1, 2, 3, 4, 5, 6],
+      "startDate": "2026-11-01",
+      "endDate": null,
+      "stock": 42,
+      "refillAt": 14,
+      "color": "white",
+      "shape": "oval",
+      "active": true,
+      "createdBy": "Kamala Iyer",
+      "updatedAt": "2026-11-06T04:15:00Z"
+    },
+    {
+      "id": "med_vitamin_d3",
+      "name": "Vitamin D3",
+      "dosage": "60000 IU",
+      "instructions": "Take once a week on Sunday with a meal.",
+      "times": ["09:00"],
+      "daysOfWeek": [0],
+      "startDate": "2026-11-01",
+      "endDate": null,
+      "stock": 6,
+      "refillAt": 4,
+      "color": "yellow",
+      "shape": "capsule",
+      "active": true,
+      "createdBy": "Ananya Iyer",
+      "updatedAt": "2026-11-01T05:10:00Z"
+    }
+  ]
+}

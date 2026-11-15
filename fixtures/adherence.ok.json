@@ -1,0 +1,20 @@
+{
+  "days": 7,
+  "rate": 0.86,
+  "streakDays": 3,
+  "byDay": [
+    { "date": "2026-11-08", "scheduled": 5, "taken": 4, "skipped": 0, "missed": 1 },
+    { "date": "2026-11-09", "scheduled": 4, "taken": 3, "skipped": 0, "missed": 1 },
+    { "date": "2026-11-10", "scheduled": 4, "taken": 3, "skipped": 0, "missed": 1 },
+    { "date": "2026-11-11", "scheduled": 4, "taken": 3, "skipped": 1, "missed": 0 },
+    { "date": "2026-11-12", "scheduled": 4, "taken": 4, "skipped": 0, "missed": 0 },
+    { "date": "2026-11-13", "scheduled": 4, "taken": 4, "skipped": 0, "missed": 0 },
+    { "date": "2026-11-14", "scheduled": 4, "taken": 4, "skipped": 0, "missed": 0 }
+  ],
+  "byMedication": [
+    { "medicationId": "med_metformin", "name": "Metformin", "rate": 0.86 },
+    { "medicationId": "med_amlodipine", "name": "Amlodipine", "rate": 0.86 },
+    { "medicationId": "med_atorvastatin", "name": "Atorvastatin", "rate": 0.86 },
+    { "medicationId": "med_vitamin_d3", "name": "Vitamin D3", "rate": 1 }
+  ]
+}

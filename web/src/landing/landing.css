@@ -1,0 +1,216 @@
+/* Hearth landing: foundations, glass material, buttons, nav, footer. Every class is ld- prefixed. */
+.ld {
+  --ld-gutter: clamp(20px, 5vw, 48px);
+  --ld-blur: 22px;
+  --ld-fill: color-mix(in srgb, var(--night-1) 40%, transparent);
+  --ld-h2: clamp(2rem, 3.6vw + 0.6rem, 3.75rem);
+  position: relative;
+  min-height: 100dvh;
+  color: var(--text-1);
+}
+.ld-page { position: relative; z-index: 1; overflow-x: clip; }
+
+@media (max-width: 700px) {
+  .ld { --ld-blur: 12px; }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .ld { --ld-fill: color-mix(in srgb, var(--night-2) 92%, transparent); }
+}
+
+/* ---------- Glass material ---------- */
+.ld-glass {
+  position: relative;
+  isolation: isolate;
+  border-radius: var(--radius-lg);
+  background:
+    var(--grain),
+    linear-gradient(160deg, var(--glass-2), var(--glass-1) 60%),
+    var(--ld-fill);
+  background-size: 160px 160px, auto, auto;
+  -webkit-backdrop-filter: blur(var(--ld-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(var(--ld-blur)) saturate(var(--glass-saturate));
+  box-shadow: var(--glass-highlight), var(--glass-shadow);
+}
+/* 1px gradient edge, painted only on the border box via mask-composite. */
+.ld-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: var(--glass-edge);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  pointer-events: none;
+  z-index: 2;
+}
+/* Specular sheen that tracks the pointer (--mx / --my written from rAF). */
+.ld-glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 0%), rgba(255, 255, 255, 0.16), transparent 62%);
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-out);
+  pointer-events: none;
+  z-index: 2;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ld-glass:hover::after { opacity: 1; }
+  .ld-glass--lift { transition: transform 360ms var(--ease-out), box-shadow 360ms var(--ease-out); }
+  .ld-glass--lift:hover { transform: translateY(-6px); box-shadow: var(--glass-highlight), var(--glass-shadow-float); }
+}
+
+/* ---------- Type ---------- */
+.ld-display {
+  font-size: var(--text-3xl);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  font-weight: 700;
+  text-wrap: balance;
+}
+/* Top-lit type, as if under a key light. Darkest stop (#a1a1a6) keeps 7.6:1 contrast. */
+.ld-display, .ld-h2 {
+  background: linear-gradient(180deg, #ffffff 35%, #a1a1a6 110%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.ld-display .ld-line__inner { background: inherit; -webkit-background-clip: text; background-clip: text; }
+.ld-display--xl { font-size: clamp(3rem, 8.5vw, 7.5rem); line-height: 0.96; letter-spacing: -0.05em; }
+.ld-display--lg { font-size: clamp(2.5rem, 6.5vw, 5rem); }
+.ld-h2 { font-size: var(--ld-h2); line-height: 1.05; letter-spacing: -0.04em; font-weight: 700; text-wrap: balance; }
+.ld-lede { font-size: var(--text-lg); line-height: 1.5; color: var(--text-2); max-width: 38ch; text-wrap: pretty; }
+.ld-body { color: var(--text-2); max-width: 52ch; text-wrap: pretty; }
+.ld-line { display: block; overflow: hidden; padding: 0.06em 0 0.26em; margin: -0.06em 0 -0.26em; }
+.ld-line__inner { display: block; }
+
+.ld-section {
+  width: min(var(--content-max), 100% - 2 * var(--ld-gutter));
+  margin-inline: auto;
+  padding-block: clamp(72px, 12vw, 176px);
+}
+
+/* ---------- Buttons ---------- */
+.ld-mag { display: inline-block; }
+.ld-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 40px; }
+.ld-btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 30px;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-md);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+.ld-btn:active { transform: scale(0.97); }
+.ld-btn:focus-visible { box-shadow: var(--focus-ring); border-radius: var(--radius-pill); }
+.ld-btn--sm { min-height: var(--tap-min); padding: 0 20px; font-size: var(--text-sm); }
+.ld-btn--primary {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  box-shadow: var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+.ld-btn--primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.45) 50%, transparent 70%);
+  transform: translateX(-120%);
+  z-index: -1;
+  pointer-events: none;
+}
+.ld-btn--glass {
+  color: var(--text-1);
+  background: linear-gradient(160deg, var(--glass-3), var(--glass-1)), var(--ld-fill);
+  -webkit-backdrop-filter: blur(var(--ld-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(var(--ld-blur)) saturate(var(--glass-saturate));
+  box-shadow: var(--glass-highlight), inset 0 0 0 1px var(--glass-border);
+}
+.ld-btn--glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(160px circle at var(--mx, 50%) var(--my, 0%), rgba(255, 255, 255, 0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity var(--dur-base);
+  pointer-events: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ld-btn--primary:hover { box-shadow: 0 14px 44px -10px rgba(255, 255, 255, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.8); }
+  .ld-btn--primary:hover::after { transform: translateX(120%); transition: transform 760ms var(--ease-out); }
+  .ld-btn--glass:hover::after { opacity: 1; }
+}
+@media (max-width: 700px) {
+  .ld-btn--glass { -webkit-backdrop-filter: none; backdrop-filter: none; background: var(--glass-3); }
+  .ld-actions .ld-mag, .ld-actions .ld-btn { width: 100%; }
+}
+
+/* ---------- Nav ---------- */
+.ld-nav-wrap {
+  position: fixed;
+  top: 14px;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  padding-inline: 12px;
+  pointer-events: none;
+}
+.ld-nav-shell { pointer-events: auto; width: min(880px, 100%); transform-origin: top center; }
+.ld-nav { display: flex; align-items: center; gap: 16px; padding: 8px 8px 8px 18px; border-radius: var(--radius-pill); }
+.ld-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--tap-min);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-1);
+  text-decoration: none;
+}
+.ld-nav__links { display: none; margin-inline: auto; gap: 2px; }
+.ld-nav__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-min);
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  color: var(--text-2);
+  font-size: var(--text-sm);
+  text-decoration: none;
+  transition: background var(--dur-base), color var(--dur-base);
+}
+.ld-nav__link:hover { background: var(--glass-2); color: var(--text-1); }
+.ld-nav__link:focus-visible { border-radius: var(--radius-pill); }
+.ld-nav .ld-btn { margin-left: auto; }
+@media (min-width: 820px) {
+  .ld-nav__links { display: flex; }
+  .ld-nav .ld-btn { margin-left: 0; }
+}
+
+/* ---------- Footer ---------- */
+.ld-footer {
+  width: min(var(--content-max), 100% - 2 * var(--ld-gutter));
+  margin: 0 auto;
+  padding: 24px 0 56px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--text-2);
+  font-size: var(--text-sm);
+}

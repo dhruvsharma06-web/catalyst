@@ -1,0 +1,21 @@
+{
+  "member": {
+    "id": "mem_ananya",
+    "name": "Ananya Iyer",
+    "role": "family",
+    "email": "ananya@example.com",
+    "notify": {
+      "doses": true,
+      "missed": true,
+      "appointments": true
+    },
+    "joinedAt": "2026-10-02T03:44:00Z"
+  },
+  "circle": {
+    "id": "cir_iyer",
+    "code": "MAPLE-4821",
+    "elderName": "Kamala Iyer",
+    "timezone": "Asia/Kolkata",
+    "createdAt": "2026-09-28T06:30:00Z"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "medications": [],
+  "confidence": 0,
+  "notes": "The image does not look like a prescription or medicine label.",
+  "model_version": "mock"
+}

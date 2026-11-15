@@ -1,0 +1,28 @@
+{
+  "notifications": [
+    {
+      "id": "ntf_003",
+      "at": "2026-11-15T03:35:00Z",
+      "kind": "dose_missed",
+      "toMasked": "a***@example.com",
+      "subject": "Missed dose: Metformin 500 mg at 08:00",
+      "transport": "smtp"
+    },
+    {
+      "id": "ntf_002",
+      "at": "2026-11-15T03:15:00Z",
+      "kind": "dose_upcoming",
+      "toMasked": "a***@example.com",
+      "subject": "Due soon: Amlodipine 5 mg at 09:00",
+      "transport": "smtp"
+    },
+    {
+      "id": "ntf_001",
+      "at": "2026-11-14T04:00:00Z",
+      "kind": "refill_low",
+      "toMasked": "a***@example.com",
+      "subject": "Refill soon: Amlodipine 5 mg (9 left)",
+      "transport": "smtp"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+# Cloud Build pipeline: build the container image, push it to Artifact Registry,
+# then deploy it to the Cloud Run service "hearth".
+#
+# Run manually:
+#   gcloud builds submit --config cloudbuild.yaml --substitutions=_REGION=asia-south1
+# Images are tagged with the Cloud Build ID, which is set for manual and trigger builds.
+
+substitutions:
+  _REGION: asia-south1
+
+steps:
+  - name: gcr.io/cloud-builders/docker
+    id: build-image
+    args:
+      - build
+      - --tag=${_REGION}-docker.pkg.dev/$PROJECT_ID/hearth/hearth:$BUILD_ID
+      - .
+
+  - name: gcr.io/cloud-builders/docker
+    id: push-image
+    args:
+      - push
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/hearth/hearth:$BUILD_ID
+
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    id: deploy-service
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - hearth
+      - --image=${_REGION}-docker.pkg.dev/$PROJECT_ID/hearth/hearth:$BUILD_ID
+      - --region=${_REGION}
+      - --platform=managed
+      - --allow-unauthenticated
+      - --min-instances=0
+      - --max-instances=3
+      - --memory=512Mi
+      - --cpu=1
+      - --concurrency=80
+      - --set-env-vars=NODE_ENV=production,STORE=firestore,GOOGLE_GENAI_USE_VERTEXAI=true,GOOGLE_CLOUD_LOCATION=${_REGION},GOOGLE_CLOUD_PROJECT=$PROJECT_ID
+      - --set-secrets=SESSION_SECRET=hearth-session-secret:latest,JOB_TOKEN=hearth-job-token:latest
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+timeout: 1200s

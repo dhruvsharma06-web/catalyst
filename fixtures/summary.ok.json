@@ -1,0 +1,14 @@
+{
+  "summary": "Kamala took 25 of 29 scheduled doses over the past week (86%). Most of the missed doses were on 8, 9 and 10 November, and she has had no missed or skipped doses for the last three days. Her cardiology visit with Dr. Rao on 20 November is the next appointment.",
+  "highlights": [
+    "86% of scheduled doses taken in the last 7 days",
+    "No missed or skipped doses from 12 to 14 November",
+    "Amlodipine has 9 tablets left, below the refill threshold of 10"
+  ],
+  "attention": [
+    "Missed doses on 8, 9 and 10 November",
+    "Refill Amlodipine before the next dose cycle"
+  ],
+  "model_version": "mock",
+  "generatedAt": "2026-11-15T03:50:00Z"
+}

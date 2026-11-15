@@ -1,0 +1,28 @@
+{
+  "appointments": [
+    {
+      "id": "apt_cardio",
+      "doctorName": "Dr. Rao",
+      "specialty": "Cardiology",
+      "location": "Ruby Hall Clinic, Pune",
+      "startsAt": "2026-11-20T04:30:00Z",
+      "durationMinutes": 30,
+      "notes": "Bring the blood pressure log for the last month.",
+      "reminderMinutesBefore": 1440,
+      "createdBy": "Ananya Iyer",
+      "updatedAt": "2026-11-02T08:30:00Z"
+    },
+    {
+      "id": "apt_endo",
+      "doctorName": "Dr. Mehta",
+      "specialty": "Endocrinology",
+      "location": "Jehangir Hospital, Pune",
+      "startsAt": "2026-11-27T05:00:00Z",
+      "durationMinutes": 30,
+      "notes": "Bring fasting sugar readings from the past three months.",
+      "reminderMinutesBefore": 1440,
+      "createdBy": "Ananya Iyer",
+      "updatedAt": "2026-11-12T10:05:00Z"
+    }
+  ]
+}

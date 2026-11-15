@@ -1,0 +1,17 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+playwright-report/
+test-results/
+
+# Event briefing material (not part of the product)
+docs/source/
+e2e/report/
+
+# Vercel local state
+.vercel/

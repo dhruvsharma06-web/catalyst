@@ -1,0 +1,118 @@
+/*
+ * Hearth design tokens — graphite glass.
+ * A true-black stage with soft, cool light; frosted glass surfaces; white type;
+ * one calm accent and Apple-style system colours used only for status.
+ * Every component reads from these variables; never hard-code colours.
+ * Contrast ratios are measured against --night-1.
+ */
+:root {
+  /* Typography — two families only */
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-ui: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.625rem;
+  --text-2xl: 2.25rem;
+  --text-3xl: clamp(2.75rem, 6vw + 1rem, 5.75rem);
+  --leading-tight: 1.08;
+  --leading-body: 1.55;
+  --tracking-tight: -0.035em;
+
+  /* Spacing — 4/8 scale */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px; --space-9: 96px; --space-10: 140px;
+
+  /* Radius */
+  --radius-sm: 10px; --radius-md: 16px; --radius-lg: 24px; --radius-xl: 32px; --radius-pill: 999px;
+
+  /* Night base */
+  --night-0: #000000;
+  --night-1: #0a0a0c;
+  --night-2: #141417;
+  --night-3: #1f1f24;
+
+  /* Stage light (cinematic background). Deliberately low-saturation. */
+  --aurora-ember: #3a5b8c;   /* steel blue key light */
+  --aurora-rose: #4a4f7a;    /* slate indigo fill */
+  --aurora-amber: #8a7a63;   /* warm practical, very faint */
+  --aurora-teal: #2d6a6e;    /* deep teal rim */
+  --aurora-iris: #5b5f8f;
+
+  /* Text on night/glass */
+  --text-1: #f5f5f7;                       /* 18.3:1 */
+  --text-2: #a1a1a6;                       /* 7.6:1 */
+  --text-3: #8e8e93;                       /* 5.9:1 */
+  --text-on-accent: #000000;               /* on --accent-solid: 19.4:1 */
+
+  /* Primary action: white, like Apple's own marketing buttons. Accent blue for links and focus. */
+  --accent-solid: #f5f5f7;
+  --accent: linear-gradient(180deg, #ffffff 0%, #e8e8ed 100%);
+  --accent-glow: 0 8px 30px -10px rgba(255, 255, 255, 0.35);
+  --accent-text: #4aa8ff;                  /* links on night: 7.4:1 */
+  --brand: #ff9f43;                        /* the flame mark only */
+
+  /* Semantic (tuned for dark glass) */
+  --success: #32d74b;  --success-bg: rgba(50, 215, 75, 0.14);
+  --warning: #ffd60a;  --warning-bg: rgba(255, 214, 10, 0.13);
+  --danger:  #ff6961;  --danger-bg:  rgba(255, 105, 97, 0.14);
+  --info:    #64d2ff;  --info-bg:    rgba(100, 210, 255, 0.13);
+
+  /* Enamel pill colours */
+  --pill-white: #f2f2f7; --pill-blue: #64a8ff; --pill-pink: #ff8fb1;
+  --pill-yellow: #ffd60a; --pill-green: #5fd38a; --pill-orange: #ffa94d;
+
+  /* Glass */
+  --glass-blur: 22px;
+  --glass-saturate: 170%;
+  --glass-1: rgba(255, 255, 255, 0.04);    /* decorative panels on the landing page */
+  --glass-2: rgba(255, 255, 255, 0.065);   /* cards */
+  --glass-3: rgba(255, 255, 255, 0.1);     /* raised / hover */
+  --glass-solid: rgba(28, 28, 32, 0.72);   /* app surfaces: readable over any light */
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-strong: rgba(255, 255, 255, 0.18);
+  --glass-edge: linear-gradient(160deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.05) 35%, rgba(255, 255, 255, 0.02) 65%, rgba(255, 255, 255, 0.14));
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  --glass-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 24px 60px -20px rgba(0, 0, 0, 0.65);
+  --glass-shadow-float: 0 50px 120px -30px rgba(0, 0, 0, 0.9), 0 20px 50px -25px rgba(74, 168, 255, 0.18);
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 160ms; --dur-base: 260ms; --dur-slow: 520ms;
+
+  /* Focus */
+  --focus-ring: 0 0 0 2px var(--night-1), 0 0 0 4px var(--accent-text);
+
+  /* Layout */
+  --tap-min: 44px;
+  --content-max: 1200px;
+
+  color-scheme: dark;
+}
+
+/* Elder mode: larger type, stronger text, bigger targets (toggled on <html data-elder="true">) */
+:root[data-elder="true"] {
+  --text-sm: 1.125rem; --text-md: 1.3125rem; --text-lg: 1.5rem; --text-xl: 1.875rem; --text-2xl: 2.5rem;
+  --text-2: #c7c7cc;
+  --text-3: #aeaeb2;
+  --glass-solid: rgba(24, 24, 28, 0.92);
+  --tap-min: 60px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0ms; --dur-base: 0ms; --dur-slow: 0ms; }
+}
+
+/* Browsers without backdrop-filter get an opaque surface so text stays readable. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  :root {
+    --glass-1: rgba(28, 28, 32, 0.94);
+    --glass-2: rgba(32, 32, 37, 0.95);
+    --glass-3: rgba(42, 42, 48, 0.96);
+    --glass-solid: rgba(28, 28, 32, 0.98);
+  }
+}

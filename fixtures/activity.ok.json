@@ -1,0 +1,44 @@
+{
+  "activity": [
+    {
+      "id": "act_005",
+      "at": "2026-11-15T03:36:00Z",
+      "actorName": "Ananya Iyer",
+      "actorRole": "family",
+      "kind": "dose.taken",
+      "summary": "Logged Amlodipine 5 mg as taken"
+    },
+    {
+      "id": "act_004",
+      "at": "2026-11-14T06:40:00Z",
+      "actorName": "Kamala Iyer",
+      "actorRole": "elder",
+      "kind": "medication.updated",
+      "summary": "Updated Amlodipine refill threshold to 10"
+    },
+    {
+      "id": "act_003",
+      "at": "2026-11-12T10:05:00Z",
+      "actorName": "Ananya Iyer",
+      "actorRole": "family",
+      "kind": "appointment.created",
+      "summary": "Added appointment with Dr. Mehta (Endocrinology)"
+    },
+    {
+      "id": "act_002",
+      "at": "2026-11-06T04:15:00Z",
+      "actorName": "Kamala Iyer",
+      "actorRole": "elder",
+      "kind": "medication.created",
+      "summary": "Added medication Metformin 500 mg"
+    },
+    {
+      "id": "act_001",
+      "at": "2026-10-02T03:44:00Z",
+      "actorName": "Ananya Iyer",
+      "actorRole": "family",
+      "kind": "member.joined",
+      "summary": "Joined the care circle"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "UNAUTHORIZED",
+    "message": "Please sign in to your care circle.",
+    "details": []
+  }
+}
