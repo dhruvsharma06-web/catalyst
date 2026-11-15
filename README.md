@@ -4,7 +4,7 @@
 
 ![Hearth landing page](docs/screenshots/landing.png)
 
-**Live demo:** `<CLOUD_RUN_URL>` · **API contract:** [CONTRACT.md](CONTRACT.md) · **Architecture:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+**Live demo:** https://hearth-b6iw6xpmdq-el.a.run.app · **API contract:** [CONTRACT.md](CONTRACT.md) · **Architecture:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 
 > Hearth helps people keep track of medicines and visits. It is not a substitute for professional medical advice.
 
@@ -43,9 +43,9 @@ Hearth is built the other way round. **The elder stays in charge:** their circle
 - **Progress.** An adherence gauge, a day-by-day chart with an accessible table fallback, per-medicine rates, and a weekly care summary written for family.
 - **Activity and notifications.** Shows who changed what and which emails were sent, so nothing changes silently.
 
-| Today | Progress | Phone, large text |
+| Today | The care circle | Add a medicine |
 |---|---|---|
-| ![Today](docs/screenshots/today.png) | ![Progress](docs/screenshots/progress.png) | ![Large text on a phone](docs/screenshots/mobile-large-text.png) |
+| ![Today](docs/screenshots/today.png) | ![The care circle](docs/screenshots/care-circle.png) | ![Add a medicine](docs/screenshots/add-medicine.png) |
 
 ## Google Cloud services
 

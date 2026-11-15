@@ -1,0 +1,14 @@
+# Secret-scan configuration. Test files and the e2e config contain fixed, non-secret
+# test tokens; everything else is scanned with the default rules.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Fixed test-only tokens"
+paths = [
+  '''server/test/.*''',
+  '''web/src/.*\.test\.tsx?''',
+  '''e2e/.*''',
+  '''playwright\.config\.ts''',
+  '''fixtures/.*''',
+]
